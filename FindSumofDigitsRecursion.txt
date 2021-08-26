@@ -1,0 +1,24 @@
+
+#include <stdio.h>
+
+int sum_digits(int n){
+    static int sum =0;
+    int m;
+    
+    if(n==0)
+    return 0;
+    
+    m = n%10;
+    sum+=m;
+    sum_digits(n/10);
+    
+    return sum;
+}
+
+int main() {
+    int a = 123;
+    
+    printf("%d",sum_digits(a));
+    
+    return 0;
+}
