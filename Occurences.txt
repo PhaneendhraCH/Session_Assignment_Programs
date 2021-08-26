@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <string.h>
+#define MAX 200
+
+void occurence(char str[] ,char new[], char ch){
+    int i=0,j=0;
+    
+    while(str[i]!='\0'){
+        if(str[i]!=ch){
+            new[j] = str[i];
+            j++;
+        }
+        i++;
+    }
+   
+    new[j]='\0';
+}
+
+
+int main()
+{
+    char str[MAX];
+    printf("Enter a string : ");
+    fgets(str,MAX,stdin);
+    char new[MAX];
+    char ch;
+    printf("Enter the character to be removed : ");
+    scanf("%c",&ch);
+    
+    occurence(str,new,ch);
+    
+    printf("%s",new);
+    return 0;
+}
